@@ -9,3 +9,6 @@ Command to chose from:
 - load - Load something from clippy to your clipboard
 - list - View the items in clippy
 - delete - Delete a key from clippy or ALL to delete all
+
+Package requirements
+- pyperclip
