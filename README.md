@@ -9,9 +9,3 @@ Command to chose from:
 - load - Load something from clippy to your clipboard
 - list - View the items in clippy
 - delete - Delete a key from clippy or ALL to delete all
-
-Shortcut to assign to keystrokes
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py save"
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py load"
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py list"
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py delete"
