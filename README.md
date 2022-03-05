@@ -10,5 +10,11 @@ Command to chose from:
 - list - View the items in clippy
 - delete - Delete a key from clippy or ALL to delete all
 
+Usage Examples
+gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py save"
+gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py load"
+gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py list"
+gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py delete"
+
 Package requirements
 - pyperclip

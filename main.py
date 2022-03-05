@@ -1,25 +1,3 @@
-"""
-Store text from the clipboard for later access
-
-Commands:
-- save - Save item from clipboard into a key
-- load - Load something from clippy to your clipboard
-- list - View the items in clippy
-- delete - Delete a key from clippy or ALL to delete all
-
-Design:
-This is meant to be attached to keyboard shortcuts for quick access when it
-comes to managing your clipboard and text.
-
-Usage:
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py save"
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py load"
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py list"
-gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py delete"
-
-"""
-
-# Imports needed
 import sys
 import pyperclip
 import json
