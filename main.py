@@ -1,4 +1,4 @@
-'''
+"""
 Store text from the clipboard for later access
 
 Commands:
@@ -17,7 +17,7 @@ gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py load"
 gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py list"
 gnome-terminal -e "/usr/bin/python3 /PATH/ClipManager/main.py delete"
 
-'''
+"""
 
 # Imports needed
 import sys
@@ -31,33 +31,39 @@ SAVED_DATA = APP_PATH + "/clipboard.json"
 
 # This loads the JSON file or creates it if needed, returns the file as "data"
 def load_data(filepath):
-    try: # If file doesnt exist
-        with open(filepath, "r") as f: # stores in f
+    try:  # If file doesnt exist
+        with open(filepath, "r") as f:  # stores in f
             data = json.load(f)
             return data
     except:
         return {}
 
+
 # Saving from your clipboard to the JSON file at a key
 def save_data(filepath, data):
-    with open(filepath, "w") as f: # f stores file
-        json.dump(data, f, sort_keys=True) # Save data to json file as "w" wipes file
+    with open(filepath, "w") as f:  # f stores file
+        json.dump(data, f, sort_keys=True)  # Save data to json file as "w" wipes file
+
 
 # Delete a key from the JSON file
 def delete_data(filepath, key):
     # Uses a temp dictionary for storage of resulting filtered data
     tempdict = dict(filter(lambda item: key not in item, data.items()))
 
-    with open(filepath, "w") as f: # f stores file
-        json.dump(tempdict, f, sort_keys=True) # Save data to json file as "w" wipes file
+    with open(filepath, "w") as f:  # f stores file
+        json.dump(
+            tempdict, f, sort_keys=True
+        )  # Save data to json file as "w" wipes file
+
 
 # Delete all keys from the JSON file
 def delete_all(filepath):
     # Uses a temp dictionary for storage of resulting filtered data
     tempdict = {}
 
-    with open(filepath, "w") as f: # f stores file
-        json.dump(tempdict, f) # Save data to json file as "w" wipes file
+    with open(filepath, "w") as f:  # f stores file
+        json.dump(tempdict, f)  # Save data to json file as "w" wipes file
+
 
 # User Input
 # Handles the argument you can pass it to call from the terminal
@@ -82,7 +88,7 @@ if len(sys.argv) == 2:
 
         # Getting the user key and saving it to the JSON file
         key = input("\nType the key for this clip: ")
-        data[key] = pyperclip.paste()##
+        data[key] = pyperclip.paste()  ##
         save_data(SAVED_DATA, data)
         print("Data that was saved: ", pyperclip.paste())
 
